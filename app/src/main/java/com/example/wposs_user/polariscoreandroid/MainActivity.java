@@ -1,5 +1,6 @@
 package com.example.wposs_user.polariscoreandroid;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -56,19 +57,41 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.menu_nav_bar, menu);
+
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        switch (item.getItemId()) {
+            case R.id.nav_perfil:
+                Intent i = new Intent(this, Perfil.class);
+                startActivity(i);
+                this.finish();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+            case R.id.nav_stock:
+                Intent i = new Intent(this, Stock.class);
+                startActivity(i);
+                this.finish();
+
+            case R.id.nav_consultar_terminales_reparadas:
+                Intent i = new Intent(this, TerminalesReparadas.class);
+                startActivity(i);
+                this.finish();
+
+            case R.id.nav_productividad:
+                Intent i = new Intent(this, Productividad.class);
+                startActivity(i);
+                this.finish();
+
+            case R.id.nav_cerrar_sesion:
+                Intent i = new Intent(this, Activity_login.class);
+                startActivity(i);
+                this.finish();
+
+
+
         }
 
         return super.onOptionsItemSelected(item);
@@ -80,17 +103,15 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_perfil) {
+            //  Intent i=new Intent()
+        } else if (id == R.id.nav_stock) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_consultar_terminales_reparadas) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_productividad) {
 
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_cerrar_sesion) {
 
         }
 

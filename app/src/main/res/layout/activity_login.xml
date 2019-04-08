@@ -45,9 +45,30 @@
         android:hint="@string/clave"
         android:inputType="textPassword" />
 
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="400sp"
+        android:text="@string/iniciar" />
 
+    <ImageButton
+        android:id="@+id/btn_huella"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="600sp"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@mipmap/huella_100" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/LoginHuella"
+        android:layout_marginTop="680"
 
+        />
 
 
 </RelativeLayout>

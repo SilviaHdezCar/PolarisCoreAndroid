@@ -5,5 +5,11 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
+    <string name="iniciar">INICIAR SESION</string>
+    <string name="correo">DIGITE SU CORREO ELECTRONICO</string>
+    <string name="clave">DIGITE SU CONTRASEÑA</string>
     <string name="action_settings">Settings</string>
+    <string name="Login">INICIAR</string>
+
+
 </resources>

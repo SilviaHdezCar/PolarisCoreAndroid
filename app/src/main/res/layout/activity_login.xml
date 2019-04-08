@@ -6,11 +6,7 @@
     android:layout_height="match_parent"
        tools:context=".Activity_login">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar">
 
-    </include>
 
 
 
@@ -66,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="@string/LoginHuella"
-        android:layout_marginTop="680"
+        android:layout_marginTop="680dp"
 
         />
 

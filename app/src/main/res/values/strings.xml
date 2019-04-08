@@ -13,10 +13,14 @@
     <string name="LoginHuella">INICIAR SESION MEDIANTE HUELLA DIGITAL</string>
     <string name="Cambiar_pass">ACTUALIZAR CONTRASEÑA</string>
     <string name="rta">RESPUESTA</string>
-    <string name="validar_rta">VERIFICAR RESPUESTAS</string>
+    <string name="cambiar_clave">Actualizar</string>
+    <string name="validar_rta">Digite su nueva Contraseña</string>
+    <string name="resp">VERIFICAR RESPUESTAS</string>
+
 
 
         <string-array name="preguntas">
+            <item> NO SELECCION</item>
             <item>¿Cuál fue el nombre de tu primera mascota?</item>
             <item>¿Cuál es el nombre de tu primer profesor?</item>
             <item>¿Cuál fue tu primer número de teléfono?</item>

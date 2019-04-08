@@ -7,24 +7,24 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_perfil"
-            android:icon="@drawable/ic_profile"
+            android:icon="@drawable/ic_menu_camera"
             android:title="Perfil" />
         <item
             android:id="@+id/nav_stock"
-            android:icon="@drawable/ic_stock"
+            android:icon="@drawable/ic_menu_gallery"
             android:title="Stock" />
         <item
             android:id="@+id/nav_consultar_terminales_reparadas"
-            android:icon="@drawable/ic_buscar"
+            android:icon="@drawable/ic_menu_gallery"
             android:title="Consultar terminales reparadas" />
         <item
             android:id="@+id/nav_productividad"
-            android:icon="@drawable/ic_ver_productividad"
+            android:icon="@drawable/ic_menu_send"
             android:title="Productividad" />
 
         <item
             android:id="@+id/nav_cerrar_sesion"
-            android:icon="@drawable/ic_cerrar_sesion"
+            android:icon="@drawable/ic_menu_camera"
                  android:title="Cerrar sesion" />
 
     </group>

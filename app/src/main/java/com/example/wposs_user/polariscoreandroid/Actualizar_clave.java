@@ -6,7 +6,7 @@ import android.os.Bundle;
 public class Actualizar_clave extends AppCompatActivity {
 
 
-    String [ ] preguntas={"a","N","C"};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

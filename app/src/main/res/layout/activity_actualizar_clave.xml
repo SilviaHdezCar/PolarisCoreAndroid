@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Actualizar_clave">
+
+    <include
+        android:id="@+id/txt_preg2"
+        layout="@layout/app_bar_main"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Cambiar_pass"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:textColor="@color/blanco"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/preg"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+
+        android:textSize="20dp"
+
+
+        />
+
+
+    <Spinner
+        android:id="@+id/spinner_pre1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="180sp"
+        android:layout_marginRight="10sp"
+        android:entries="@array/preguntas">
+
+    </Spinner>
+
+
+    <EditText
+        android:id="@+id/txtPre1"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="220dp"
+
+
+        android:layout_marginRight="10sp" />
+
+    <Spinner
+        android:id="@+id/spinner_pre2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="300sp"
+        android:layout_marginRight="10sp"
+        android:entries="@array/preguntas">
+
+    </Spinner>
+
+
+    <EditText
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="340dp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+
+
+        />
+
+    <Spinner
+        android:id="@+id/spinner_pre3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="420sp"
+        android:layout_marginRight="10sp"
+        android:entries="@array/preguntas">
+
+    </Spinner>
+
+
+    <EditText
+        android:id="@+id/txtPre3"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="460dp"
+       android:layout_marginRight="10sp" />
+
+
+    <Button
+        android:id="@+id/btn_valida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="540dp"
+        android:text="@string/validar_rta" />
+
+    <EditText
+        android:id="@+id/txtResp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="620dp"
+        android:layout_marginRight="10sp"
+        android:hint="@string/validar_rta"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/cambio_clave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="670dp"
+        android:text="@string/cambiar_clave"
+        android:visibility="invisible"
+        />
+
+
+
+
+
+</RelativeLayout>

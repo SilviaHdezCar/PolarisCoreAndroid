@@ -16,7 +16,7 @@ public class Activity_login extends AppCompatActivity {
 
     public void menu(View v){
 
-        Intent i = new Intent(this, Stock.class);
+        Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
         finish();
     }

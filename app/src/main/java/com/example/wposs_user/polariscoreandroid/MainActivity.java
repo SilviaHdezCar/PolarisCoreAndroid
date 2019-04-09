@@ -55,40 +55,41 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Intent i;
         switch (item.getItemId()) {
             case R.id.nav_perfil:
-                Intent i = new Intent(this, Perfil.class);
+                 i = new Intent(this, Perfil.class);
                 startActivity(i);
                 this.finish();
                 return true;
 
             case R.id.nav_stock:
-                Intent i = new Intent(this, Stock.class);
+                 i = new Intent(this, Stock.class);
                 startActivity(i);
                 this.finish();
                 return true;
 
             case R.id.nav_consultar_terminales_reparadas:
-                Intent i = new Intent(this, TerminalesReparadas.class);
+                 i = new Intent(this, TerminalesReparadas.class);
                 startActivity(i);
                 this.finish();
                 return true;
 
 
             case R.id.nav_productividad:
-                Intent i = new Intent(this, Productividad.class);
+                 i = new Intent(this, Productividad.class);
                 startActivity(i);
                 this.finish();
                 return true;
 
             case R.id.nav_cerrar_sesion:
-                Intent i = new Intent(this, Activity_login.class);
+                 i = new Intent(this, Activity_login.class);
                 startActivity(i);
                 this.finish();
                 return true;
 
             case R.id.btn_home:
-                Intent i = new Intent(this, MainActivity.class);
+                 i = new Intent(this, MainActivity.class);
                 startActivity(i);
                 this.finish();
                 return true;
@@ -97,7 +98,7 @@ public class MainActivity extends AppCompatActivity
                 aumentar();
                 return true;
 
-            case R.id.nbtn_disminuir:
+            case R.id.btn_disminuir:
                 dismuir();
                 return true;
 

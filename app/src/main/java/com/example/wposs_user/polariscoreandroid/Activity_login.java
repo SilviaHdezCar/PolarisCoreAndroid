@@ -14,11 +14,10 @@ public class Activity_login extends AppCompatActivity {
     }
 
 
-    public void irMenu(View v){
+    public void menu(View v){
 
-        Intent i = new Intent(this, MainActivity.class);
+        Intent i = new Intent(this, Stock.class);
         startActivity(i);
         finish();
-
     }
 }

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Activity_login"
+    android:paddingHorizontal="10dp"
     android:background="@color/fondo">
 
     <RelativeLayout
@@ -74,7 +75,7 @@
             android:layout_marginTop="390dp"
             android:layout_marginRight="10dp"
             android:background="@color/botones"
-            android:onClick="irMenu"
+            android:onClick="menu"
             android:text="@string/iniciarSes"
             android:textAllCaps="false"
             android:textColor="@color/blanco"

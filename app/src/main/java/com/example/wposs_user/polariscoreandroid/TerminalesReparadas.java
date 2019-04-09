@@ -1,5 +1,6 @@
 package com.example.wposs_user.polariscoreandroid;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,17 +21,11 @@ public class TerminalesReparadas extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_terminales_reparadas);
+        setContentView(R.layout.activity_productividad);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setTitle(null);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -55,7 +50,7 @@ public class TerminalesReparadas extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.terminales_reparadas, menu);
+        getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
@@ -64,38 +59,67 @@ public class TerminalesReparadas extends AppCompatActivity
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        Intent i;
+        switch (item.getItemId()) {
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+
+            case R.id.btn_home:
+                i = new Intent(this, MainActivity.class);
+                startActivity(i);
+                finish();
+                return true;
+
+            case R.id.btn_aumentar:
+                aumentar();
+                return true;
+
+            case R.id.btn_disminuir:
+                dismuir();
+                return true;
+
+
         }
 
         return super.onOptionsItemSelected(item);
     }
 
+    private void aumentar() {
+    }
+
+    private void dismuir(){
+
+    }
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+        // AL SELECCIONAR ALGUUNA OPCION DEL MENU
         int id = item.getItemId();
-
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        Intent i;
+        if (id == R.id.nav_perfil) {
+            i = new Intent(this, Perfil.class);
+            startActivity(i);
+            finish();
+        } else if (id == R.id.nav_stock) {
+            i = new Intent(this, Stock.class);
+            startActivity(i);
+            finish();
+        } else if (id == R.id.nav_consultar_terminales_reparadas) {
+            i = new Intent(this, TerminalesReparadas.class);
+            startActivity(i);
+            finish();
+        } else if (id == R.id.nav_productividad) {
+            i = new Intent(this, Productividad.class);
+            startActivity(i);
+            finish();
+        } else if (id == R.id.nav_cerrar_sesion) {
+            i = new Intent(this, Activity_login.class);
+            startActivity(i);
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-        return true;
+        return false;
     }
 }

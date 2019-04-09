@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     tools:context=".Actualizar_clave">
-
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <include
         android:id="@+id/txt_preg2"
         layout="@layout/app_bar_main"
@@ -122,14 +125,25 @@
         android:text="@string/validar_rta"
         android:textColor="@color/blanco"
         android:background="@color/azul_nav_bar"
+        android:textSize="14dp"
         />
 
     <EditText
-        android:id="@+id/txtResp"
+        android:id="@+id/txtResp1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="540dp"
+        android:layout_marginTop="590dp"
+        android:layout_marginRight="10dp"
+        android:hint="@string/validar_rta"
+        android:visibility="invisible" />
+
+    <EditText
+        android:id="@+id/txtResp2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="650dp"
         android:layout_marginRight="10dp"
         android:hint="@string/validar_rta"
         android:visibility="invisible" />
@@ -138,14 +152,14 @@
         android:id="@+id/cambio_clave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="670dp"
+        android:layout_marginTop="680dp"
         android:text="@string/cambiar_clave"
         android:visibility="invisible"
+        android:textSize="14dp"
         />
 
 
-
-
-
 </RelativeLayout>
+
+
+</ScrollView>

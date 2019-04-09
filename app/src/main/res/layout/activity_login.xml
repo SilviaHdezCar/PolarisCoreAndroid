@@ -117,10 +117,10 @@
 
         <ImageView
         android:id="@+id/imageView33"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="280dp"
-        android:layout_marginTop="255dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="290dp"
+        android:layout_marginTop="259dp"
         android:layout_marginRight="10dp"
         app:srcCompat="@drawable/user"
 
@@ -129,10 +129,10 @@
 
         <ImageView
             android:id="@+id/imageView34"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="280dp"
-            android:layout_marginTop="325dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="290dp"
+            android:layout_marginTop="329dp"
             android:layout_marginRight="10dp"
             app:srcCompat="@drawable/candado"
 

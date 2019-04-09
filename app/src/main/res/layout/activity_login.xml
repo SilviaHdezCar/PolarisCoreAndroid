@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".Activity_login"
     android:paddingHorizontal="10dp"
-    android:background="@color/fondo">
+    android:background="@color/gris_fondo">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="120dp"
             android:text="@string/iniciar"
-            android:textSize="30sp"
+            android:textSize="30dp"
             android:textStyle="bold"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="200sp"
+        android:layout_marginTop="180dp"
         android:text="@string/texto"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
@@ -44,7 +44,7 @@
 
     <EditText
         android:id="@+id/txtCorreo"
-        android:layout_width="300sp"
+        android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
@@ -57,12 +57,12 @@
 
     <EditText
         android:id="@+id/txtPass"
-        android:layout_width="255dp"
+        android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginLeft="10dp"
         android:background="@color/blanco"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="310dp"
+        android:layout_marginTop="320dp"
         android:hint="@string/clave"
         android:inputType="textPassword"
         android:textSize="16dp"/>
@@ -70,7 +70,7 @@
         <Button
             android:id="@+id/btn_login"
             android:layout_width="150dp"
-            android:layout_height="30dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="390dp"
             android:layout_marginRight="10dp"
@@ -80,7 +80,7 @@
             android:textAllCaps="false"
             android:textColor="@color/blanco"
 
-            android:textSize="16dp" />
+            android:textSize="14dp" />
 
 
     <ImageButton
@@ -89,7 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="530dp"
         android:layout_centerHorizontal="true"
-        android:background="@color/fondo"
+        android:background="@color/gris_fondo"
         app:srcCompat="@mipmap/huella_100"
 
         />
@@ -100,18 +100,41 @@
         android:layout_centerHorizontal="true"
         android:text="@string/LoginHuella"
         android:layout_marginTop="600dp"
-        android:textSize="16dp"
+        android:textSize="14dp"
 
         />
 
         <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="-280dp"
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="-280dp"
+        android:layout_marginRight="10dp"
+        app:srcCompat="@drawable/logo"
+
+        />
+
+        <ImageView
+        android:id="@+id/imageView33"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="290dp"
+        android:layout_marginTop="259dp"
+        android:layout_marginRight="10dp"
+        app:srcCompat="@drawable/user"
+
+
+        />
+
+        <ImageView
+            android:id="@+id/imageView34"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="290dp"
+            android:layout_marginTop="329dp"
             android:layout_marginRight="10dp"
-            app:srcCompat="@drawable/logo"
+            app:srcCompat="@drawable/candado"
 
             />
 

@@ -16,7 +16,7 @@ public class Activity_login extends AppCompatActivity {
 
     public void menu(View v){
 
-        Intent i = new Intent(this, MainActivity.class);
+        Intent i = new Intent(this, Actualizar_clave.class);
         startActivity(i);
         finish();
     }

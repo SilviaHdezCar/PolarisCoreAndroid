@@ -3,7 +3,7 @@
 
     <style name="letra_menu">
         <item name="android:textColor">@color/gris_menu_letra</item>
-        <item name="android:textSize">15dp</item>
+        <item name="android:textSize">14dp</item>
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textStyle">bold</item>
     </style>

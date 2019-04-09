@@ -24,7 +24,9 @@
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer"
         android:background="@color/negro"
-        app:itemTextColor="@color/blanco"/>
+        app:itemTextColor="@color/blanco"
+        app:itemIconTint="@color/blanco"
+        />
 
 
 

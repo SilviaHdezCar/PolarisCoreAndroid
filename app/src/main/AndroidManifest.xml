@@ -18,23 +18,20 @@
             android:name=".Actualizar_clave"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"/>
+
         <activity
             android:name=".Perfil"
-            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity
             android:name=".Productividad"
-            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity
             android:name=".TerminalesReparadas"
-            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity

@@ -62,38 +62,38 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_perfil:
                  i = new Intent(this, Perfil.class);
                 startActivity(i);
-                this.finish();
+                finish();
                 return true;
 
             case R.id.nav_stock:
                  i = new Intent(this, Stock.class);
                 startActivity(i);
-                this.finish();
+                finish();
                 return true;
 
             case R.id.nav_consultar_terminales_reparadas:
                  i = new Intent(this, TerminalesReparadas.class);
                 startActivity(i);
-                this.finish();
+                finish();
                 return true;
 
 
             case R.id.nav_productividad:
                  i = new Intent(this, Productividad.class);
                 startActivity(i);
-                this.finish();
+                finish();
                 return true;
 
             case R.id.nav_cerrar_sesion:
                  i = new Intent(this, Activity_login.class);
                 startActivity(i);
-                this.finish();
+                finish();
                 return true;
 
             case R.id.btn_home:
                  i = new Intent(this, MainActivity.class);
                 startActivity(i);
-                this.finish();
+                finish();
                 return true;
 
             case R.id.btn_aumentar:
@@ -104,7 +104,6 @@ public class MainActivity extends AppCompatActivity
                 dismuir();
                 return true;
 
-            default:
 
         }
 
@@ -121,10 +120,12 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        /*int id = item.getItemId();
-
+        int id = item.getItemId();
+        Intent i;
         if (id == R.id.nav_perfil) {
-            //  Intent i=new Intent()
+            i = new Intent(this, Perfil.class);
+            startActivity(i);
+            finish();
         } else if (id == R.id.nav_stock) {
 
         } else if (id == R.id.nav_consultar_terminales_reparadas) {
@@ -136,7 +137,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);*/
+        drawer.closeDrawer(GravityCompat.START);
         return false;
     }
 }

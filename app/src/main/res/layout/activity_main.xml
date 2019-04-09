@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
+    style="@style/tipo_letra"
     >
 
 
@@ -27,6 +28,7 @@
         app:itemTextAppearance="@style/letra_menu"
         app:itemIconTint="@color/gris_menu_letra"
         />
+
 
 
 

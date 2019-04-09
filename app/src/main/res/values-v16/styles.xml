@@ -7,4 +7,10 @@
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="tipo_letra">
+        <item name="android:textColor">@color/negro</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
 </resources>

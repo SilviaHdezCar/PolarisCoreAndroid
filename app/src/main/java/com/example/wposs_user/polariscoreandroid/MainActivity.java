@@ -60,38 +60,38 @@ public class MainActivity extends AppCompatActivity
         Intent i;
         switch (item.getItemId()) {
             case R.id.nav_perfil:
-                 i = new Intent(this, Perfil.class);
+                i = new Intent(this, Perfil.class);
                 startActivity(i);
                 finish();
                 return true;
 
             case R.id.nav_stock:
-                 i = new Intent(this, Stock.class);
+                i = new Intent(this, Stock.class);
                 startActivity(i);
                 finish();
                 return true;
 
             case R.id.nav_consultar_terminales_reparadas:
-                 i = new Intent(this, TerminalesReparadas.class);
+                i = new Intent(this, TerminalesReparadas.class);
                 startActivity(i);
                 finish();
                 return true;
 
 
             case R.id.nav_productividad:
-                 i = new Intent(this, Productividad.class);
+                i = new Intent(this, Productividad.class);
                 startActivity(i);
                 finish();
                 return true;
 
             case R.id.nav_cerrar_sesion:
-                 i = new Intent(this, Activity_login.class);
+                i = new Intent(this, Activity_login.class);
                 startActivity(i);
                 finish();
                 return true;
 
             case R.id.btn_home:
-                 i = new Intent(this, MainActivity.class);
+                i = new Intent(this, MainActivity.class);
                 startActivity(i);
                 finish();
                 return true;
@@ -119,21 +119,29 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+        // AL SELECCIONAR ALGUUNA OPCION DEL MENU
         int id = item.getItemId();
         Intent i;
         if (id == R.id.nav_perfil) {
             i = new Intent(this, Perfil.class);
             startActivity(i);
-
+            finish();
         } else if (id == R.id.nav_stock) {
-
+            i = new Intent(this, Stock.class);
+            startActivity(i);
+            finish();
         } else if (id == R.id.nav_consultar_terminales_reparadas) {
-
+            i = new Intent(this, TerminalesReparadas.class);
+            startActivity(i);
+            finish();
         } else if (id == R.id.nav_productividad) {
-
+            i = new Intent(this, Productividad.class);
+            startActivity(i);
+            finish();
         } else if (id == R.id.nav_cerrar_sesion) {
-
+            i = new Intent(this, Activity_login.class);
+            startActivity(i);
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

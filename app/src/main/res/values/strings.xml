@@ -20,22 +20,23 @@
     <string name="texto">Bienvenido, por favor complete el siguiente formulario para Iniciar sesión </string>
 
 
-
-
-        <string-array name="preguntas">
-            <item> NO SELECCION</item>
-            <item>¿Cuál fue el nombre de tu primera mascota?</item>
-            <item>¿Cuál es el nombre de tu primer profesor?</item>
-            <item>¿Cuál fue tu primer número de teléfono?</item>
-            <item>A donde viajaste por primera vez en avion?</item>
-            <item>¿Cuál es el segundo apellido de tu primer novio(a)</item>
-            <item>¿Como se llamaba tu mejor amigo de tu adolescencia</item>
-            <item>Como se llamaba tu maestro favorito de la escuela</item>
-            <item>¿Cuál fue la primera pelicula que viste en cine?</item>
-            <item>¿Cuál fue la primera pelicula que viste en cine?</item>
-            <item>¿Cual es tu personaje de la infancia favorito?</item>
-                 </string-array>
-
+    <string-array name="preguntas">
+        <item> NO SELECCION</item>
+        <item>¿Cuál fue el nombre de tu primera mascota?</item>
+        <item>¿Cuál es el nombre de tu primer profesor?</item>
+        <item>¿Cuál fue tu primer número de teléfono?</item>
+        <item>A donde viajaste por primera vez en avion?</item>
+        <item>¿Cuál es el segundo apellido de tu primer novio(a)</item>
+        <item>¿Como se llamaba tu mejor amigo de tu adolescencia</item>
+        <item>Como se llamaba tu maestro favorito de la escuela</item>
+        <item>¿Cuál fue la primera pelicula que viste en cine?</item>
+        <item>¿Cuál fue la primera pelicula que viste en cine?</item>
+        <item>¿Cual es tu personaje de la infancia favorito?</item>
+    </string-array>
+    <string name="title_activity_perfil">Perfil</string>
+    <string name="title_activity_stock">Stock</string>
+    <string name="title_activity_productividad">Productividad</string>
+    <string name="title_activity_terminales_reparadas">TerminalesReparadas</string>
 
 
 </resources>

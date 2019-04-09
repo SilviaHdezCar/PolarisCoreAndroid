@@ -25,7 +25,7 @@
         app:menu="@menu/activity_main_drawer"
         android:background="@color/negro"
         app:itemTextAppearance="@style/letra_menu"
-        app:itemIconTint="@color/blanco"
+        app:itemIconTint="@color/gris_menu_letra"
         />
 
 

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#5DBCD2</color>
+    <color name="colorPrimary">#C1E4E6</color>
     <color name="botones">#2495F3</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="blanco">#EAF1F1</color>
     <color name="fondo">#C1E4E6</color>
+    <color name="azul_nav_bar">#2196F3</color>
+    <color name="negro">#212121</color>
+    <color name="gris_menu">#BDBDBD</color>
     </resources>
 

@@ -15,7 +15,7 @@
     <string name="Cambiar_pass">ACTUALIZAR CONTRASEÑA</string>
     <string name="rta">RESPUESTA</string>
     <string name="cambiar_clave">Actualizar</string>
-    <string name="validar_rta">Digite su nueva Contraseña</string>
+    <string name="validar_rta">Verificar Respuestas</string>
     <string name="resp">VERIFICAR RESPUESTAS</string>
     <string name="texto">Bienvenido, por favor complete el siguiente formulario para Iniciar sesión </string>
     <string name="vacio"></string>

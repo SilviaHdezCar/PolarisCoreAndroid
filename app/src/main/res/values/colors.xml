@@ -11,5 +11,7 @@
     <color name="negro">#212121</color>
     <color name="gris_menu">#7D7D7D</color>
     <color name="gris_menu_letra">#BDBDBD</color>
-    </resources>
+    <color name="gris_fondo">#FDFDFD</color>
+
+</resources>
 

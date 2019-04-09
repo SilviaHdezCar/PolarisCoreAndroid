@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_perfil) {
             i = new Intent(this, Perfil.class);
             startActivity(i);
-            finish();
+
         } else if (id == R.id.nav_stock) {
 
         } else if (id == R.id.nav_consultar_terminales_reparadas) {

@@ -63,36 +63,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent i;
         switch (item.getItemId()) {
-            case R.id.nav_perfil:
-                i = new Intent(this, Perfil.class);
-                startActivity(i);
-                finish();
-                return true;
 
-            case R.id.nav_stock:
-                i = new Intent(this, Stock.class);
-                startActivity(i);
-                finish();
-                return true;
-
-            case R.id.nav_consultar_terminales_reparadas:
-                i = new Intent(this, TerminalesReparadas.class);
-                startActivity(i);
-                finish();
-                return true;
-
-
-            case R.id.nav_productividad:
-                i = new Intent(this, Productividad.class);
-                startActivity(i);
-                finish();
-                return true;
-
-            case R.id.nav_cerrar_sesion:
-                i = new Intent(this, Activity_login.class);
-                startActivity(i);
-                finish();
-                return true;
 
             case R.id.btn_home:
                 i = new Intent(this, MainActivity.class);

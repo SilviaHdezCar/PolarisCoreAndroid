@@ -38,5 +38,8 @@
     <string name="title_activity_productividad">Productividad</string>
     <string name="title_activity_terminales_reparadas">TerminalesReparadas</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>

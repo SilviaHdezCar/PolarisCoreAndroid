@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -35,6 +36,9 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        FragmentManager fragmentManager=getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.contenedor_main, new ImportFragment()).commit();
     }
 
     @Override
@@ -121,26 +125,18 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // AL SELECCIONAR ALGUUNA OPCION DEL MENU
+        FragmentManager fragmentManager=getSupportFragmentManager();
         int id = item.getItemId();
-        Intent i;
         if (id == R.id.nav_perfil) {
-            i = new Intent(this, Perfil.class);
-            startActivity(i);
-            finish();
+            fragmentManager.beginTransaction().replace(R.id.contenedor_main, new PerfilFragment()).commit();
         } else if (id == R.id.nav_stock) {
-            i = new Intent(this, Stock.class);
-            startActivity(i);
-            finish();
+            fragmentManager.beginTransaction().replace(R.id.contenedor_main, new StockFragment()).commit();
         } else if (id == R.id.nav_consultar_terminales_reparadas) {
-            i = new Intent(this, TerminalesReparadas.class);
-            startActivity(i);
-            finish();
+            fragmentManager.beginTransaction().replace(R.id.contenedor_main, new ConsultaTerminalesReparadasFragment()).commit();
         } else if (id == R.id.nav_productividad) {
-            i = new Intent(this, Productividad.class);
-            startActivity(i);
-            finish();
+            fragmentManager.beginTransaction().replace(R.id.contenedor_main, new ProductividadFragment()).commit();;
         } else if (id == R.id.nav_cerrar_sesion) {
-            i = new Intent(this, Activity_login.class);
+            Intent i = new Intent(this, Activity_login.class);
             startActivity(i);
             finish();
         }

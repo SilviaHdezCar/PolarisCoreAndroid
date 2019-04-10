@@ -2,16 +2,15 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ImportFragment"
-    android:background="@color/gris_fondo">
+    android:layout_height="wrap_content"
+    android:background="@color/gris_fondo"
+    tools:context=".ImportFragment">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="10dp">
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical">
 
 
         <TextView
@@ -20,157 +19,164 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center_horizontal"
-            android:text="Datos del usuario"
-            />
+            android:text="Datos del usuario" />
 
         <ImageView
             android:id="@+id/perfil_imagen_usuario"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/user"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:src="@drawable/user" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:gravity="center_vertical"
-            android:layout_marginLeft="5dp">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp">
 
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="20dp"
-                android:text="Nombre: "
-                style="@style/letra_negrita"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-            <TextView
+                <TextView
+                    style="@style/letra_negrita"
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"
+                    android:text="Nombre: " />
+
+                <TextView
+                    android:id="@+id/perfil_nombre_usuario"
+                    style="@style/letra_contenido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Silvia HC" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/letra_negrita"
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"
+                    android:text="Usuario: " />
+
+                <TextView
+                    android:id="@+id/perfil_usuario"
+                    style="@style/letra_contenido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="shc01" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/letra_negrita"
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"
+                    android:text="Cargo: " />
+
+                <TextView
+                    android:id="@+id/perfil_cargo"
+                    style="@style/letra_contenido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Tec. Campo" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/letra_negrita"
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"
+                    android:text="Telefono: " />
+
+                <TextView
+                    android:id="@+id/perfil_telefono"
+                    style="@style/letra_contenido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="3233021245" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/letra_negrita"
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"
+                    android:text="Correo: " />
+
+                <TextView
+                    android:id="@+id/perfil_correo"
+                    style="@style/letra_contenido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="silviahernandez@wposs.com" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/letra_negrita"
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"
+                    android:text="Ubicación: " />
+
+                <TextView
+                    android:id="@+id/perfil_ubicacion"
+                    style="@style/letra_contenido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Cúcuta, Colombia" />
+            </LinearLayout>
+
+            <Button
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:id="@+id/perfil_nombre_usuario"
-                android:text="Silvia HC"
-                style="@style/letra_contenido"
-                />
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_cambiar_clave"
+                android:text="Actualizar clave"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="right" />
+
+
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:gravity="center_vertical"
-            android:layout_marginLeft="5dp">
-
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="20dp"
-                android:text="Usuario: "
-                style="@style/letra_negrita"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:id="@+id/perfil_usuario"
-                style="@style/letra_contenido"
-                android:text="shc01"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:gravity="center_vertical"
-            android:layout_marginLeft="5dp">
-
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="20dp"
-                android:text="Cargo: "
-                style="@style/letra_negrita"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:id="@+id/perfil_cargo"
-                android:text="Tecnica Campo"
-                style="@style/letra_contenido"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:gravity="center_vertical"
-            android:layout_marginLeft="5dp">
-
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="20dp"
-                android:text="Telefono: "
-                style="@style/letra_negrita"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:id="@+id/perfil_telefono"
-
-
-                style="@style/letra_contenido"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:gravity="center_vertical"
-            android:layout_marginLeft="5dp">
-
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="20dp"
-                android:text="Correo: "
-                style="@style/letra_negrita"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:id="@+id/perfil_correo"
-                style="@style/letra_contenido"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:gravity="center_vertical"
-            android:layout_marginLeft="5dp">
-
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="20dp"
-                android:text="Ubicación: "
-                style="@style/letra_negrita"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:id="@+id/perfil_ubicacion"
-                style="@style/letra_contenido"
-                />
-        </LinearLayout>
-
-
-
-
 
     </LinearLayout>
 

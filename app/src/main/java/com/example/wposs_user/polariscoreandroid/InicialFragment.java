@@ -56,7 +56,7 @@ public class InicialFragment extends Fragment {
             super(fragmentManager);
         }
 
-        String[]tituloTabs={"Tarminales Asociadas", "Terminales autorizads"};
+        String[]tituloTabs={"Terminales Asociadas", "Terminales autorizadas"};
 
 
 

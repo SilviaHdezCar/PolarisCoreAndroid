@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:id="@+id/panel_cambiar_clave"
+    >
+
+    <TextView
+        style="@style/letra_titulos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Actualización de contraseña" />
+
+    <TextView
+        style="@style/letra_contenido"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Recuerda que la clave debe contener mayúsculas, minusculas y numeros." />
+
+
+    <EditText
+        android:id="@+id/dialog_clave_actual"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/redondo_gris"
+        android:hint="@string/clave_actual"
+        android:inputType="textVisiblePassword"/>
+
+    <EditText
+        android:id="@+id/dialog_clave_nueva"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/redondo_gris"
+        android:hint="@string/clave_nueva" />
+
+    <EditText
+        android:id="@+id/dialog_clave_confirmar"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/redondo_gris"
+        android:hint="@string/clave_confirmar" />
+
+
+</LinearLayout>

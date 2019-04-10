@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_centerHorizontal="true"
     android:orientation="vertical"
-    tools:context=".tab_terminal">
+    tools:context=".Tab_rep">
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -17,7 +17,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
             android:scrollbars="vertical"
-            tools:listitem="@layout/activity_stock">
+            >
 
         </android.support.v7.widget.RecyclerView>
 

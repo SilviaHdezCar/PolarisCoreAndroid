@@ -2,9 +2,12 @@ package com.example.wposs_user.polariscoreandroid;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,9 +17,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private AppBarLayout appBar;
+    private TabLayout tabs;
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +45,8 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        FragmentManager fragmentManager=getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.contenedor_main, new ImportFragment()).commit();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.contenedor_main, new InicialFragment()).commit();
     }
 
     @Override
@@ -62,6 +70,8 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent i;
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.contenedor_main, new InicialFragment()).commit();
         switch (item.getItemId()) {
 
 
@@ -96,16 +106,18 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // AL SELECCIONAR ALGUUNA OPCION DEL MENU
-        FragmentManager fragmentManager=getSupportFragmentManager();
+        FragmentManager fragmentManager = getSupportFragmentManager();
         int id = item.getItemId();
         if (id == R.id.nav_perfil) {
             fragmentManager.beginTransaction().replace(R.id.contenedor_main, new PerfilFragment()).commit();
+           // cargarDatosPerfil();
         } else if (id == R.id.nav_stock) {
             fragmentManager.beginTransaction().replace(R.id.contenedor_main, new StockFragment()).commit();
         } else if (id == R.id.nav_consultar_terminales_reparadas) {
             fragmentManager.beginTransaction().replace(R.id.contenedor_main, new ConsultaTerminalesReparadasFragment()).commit();
         } else if (id == R.id.nav_productividad) {
-            fragmentManager.beginTransaction().replace(R.id.contenedor_main, new ProductividadFragment()).commit();;
+            fragmentManager.beginTransaction().replace(R.id.contenedor_main, new ProductividadFragment()).commit();
+            ;
         } else if (id == R.id.nav_cerrar_sesion) {
             Intent i = new Intent(this, Activity_login.class);
             startActivity(i);
@@ -115,5 +127,41 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return false;
+    }
+
+    private ImageView imgPerfil;
+    private TextView nomUsuario;
+    private TextView usuario;
+    private TextView cargo;
+    private TextView telefono;
+    private TextView correo;
+    private TextView ubicacion;
+
+
+    void cargarDatosPerfil() {
+        imgPerfil = findViewById(R.id.perfil_imagen_usuario);
+        //imgPerfil.setBackground();//agregar img que viene del servicio (json) al campo  imagenText
+
+        nomUsuario = (TextView) findViewById(R.id.perfil_nombre_usuario);
+        nomUsuario.setText("Silvia HC");//agregar el nomUser que viene del servicio (json) al campo  nombre usuario
+
+        usuario = (TextView) findViewById(R.id.perfil_usuario);
+        usuario.setText("");//agregar el nomUser que viene del servicio (json) al campo  usuario
+
+        cargo = (TextView) findViewById(R.id.perfil_cargo);
+        cargo.setText("Tecnica");//agregar el cargo que viene del servicio (json) al campo  respectivo
+
+        telefono = (TextView) findViewById(R.id.perfil_telefono);
+        telefono.setText("3113203021");//agregar el telefono que viene del servicio (json) al campo  respectivo
+
+        correo = (TextView) findViewById(R.id.perfil_correo);
+        correo.setText("silviahernadez@wposs.com");//agregar el cargo que viene del servicio (json) al campo  respectivo
+
+        ubicacion = (TextView) findViewById(R.id.perfil_ubicacion);
+        ubicacion.setText("Colombia. Cúcuta");//agregar el telefono que viene del servicio (json) al campo  respectivo
+
+
+
+
     }
 }

@@ -6,18 +6,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <item android:title="Disminuir"
+    <item android:title="Vista principal"
         android:id="@+id/btn_home"
-        android:icon="@mipmap/ic_home_white"
-        app:showAsAction="always" />
+        android:icon="@mipmap/ic_home_white" />
 
     <item android:title="Disminuir"
         android:id="@+id/btn_disminuir"
-        android:icon="@mipmap/ic_less_zoom"
-        app:showAsAction="always" />
+        android:icon="@mipmap/ic_less_zoom" />
 
     <item android:title="Aumentar"
         android:id="@+id/btn_aumentar"
-        android:icon="@mipmap/ic_more_white"
-        app:showAsAction="always" />
+        android:icon="@mipmap/ic_more_white" />
 </menu>

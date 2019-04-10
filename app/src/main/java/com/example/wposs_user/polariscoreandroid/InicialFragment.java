@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -34,6 +35,11 @@ public class InicialFragment extends Fragment {
         appBar.addView(tabs);
 
 
+        viewPager=(ViewPager)view.findViewById(R.id.pager);//*******buscar pager
+        ViewPagerAdapter pagerAdapter=new ViewPagerAdapter(getFragmentManager());
+        viewPager.setAdapter(pagerAdapter);
+        tabs.setupWithViewPager(viewPager);
+
         return view;
     }
 
@@ -59,6 +65,8 @@ public class InicialFragment extends Fragment {
             switch (i){
                 case 0:
                     return new Tab_ConsultaTerminalesAsociadas();
+                case 1:
+                    return  new Tab_ConsultaTerminalesAutorizadas();
             }
 
             return null;
@@ -66,7 +74,13 @@ public class InicialFragment extends Fragment {
 
         @Override
         public int getCount() {
-            return 0;
+            return 2;
+        }
+
+        @Nullable
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return tituloTabs[position];
         }
     }
 }

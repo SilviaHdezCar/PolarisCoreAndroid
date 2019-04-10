@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="50dp"
         android:orientation="vertical">
 
 
@@ -172,8 +172,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/btn_cambiar_clave"
                 android:text="Actualizar clave"
-                android:layout_marginTop="15dp"
-                android:layout_gravity="right" />
+                android:layout_marginTop="15dp" />
 
 
         </LinearLayout>

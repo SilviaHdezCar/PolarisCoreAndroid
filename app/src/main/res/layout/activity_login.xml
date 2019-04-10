@@ -67,14 +67,15 @@
         android:inputType="textPassword"
         android:textSize="16dp"/>
 
+
         <Button
             android:id="@+id/btn_login"
             android:layout_width="150dp"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="390dp"
             android:layout_marginRight="10dp"
-            android:background="@color/botones"
+            android:background="@drawable/redondo_azul"
             android:onClick="menu"
             android:text="@string/iniciarSes"
             android:textAllCaps="false"

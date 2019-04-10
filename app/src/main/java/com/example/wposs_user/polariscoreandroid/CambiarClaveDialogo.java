@@ -51,6 +51,8 @@ public class CambiarClaveDialogo extends AppCompatDialogFragment {
         return builder.create();
     }
 
+
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -66,11 +68,49 @@ public class CambiarClaveDialogo extends AppCompatDialogFragment {
         void applyTexts(String clave_actual, String clave_nueva, String clave_confirmar );
     }
 
-    public String validarClave(String clave_actual, String clave_nueva, String clave_confirmar ){
+    //este metodo hace las validaciones escritas en el cuaderno
+    private String validarClave(String actual, String nueva, String confirmacion) {
+
+        return "";
+    }
+
+    //este metodo es para validar que la clave contenga numeros, letras minus y mayus
+    public boolean validarMayusculasMinusculasNumeros( String password){
         String msj="";
 
+        char clave;
+
+        byte  contNumero = 0;
+        byte contLetraMay = 0;
+        byte contLetraMin=0;
+
+        for (byte i = 0; i < password.length(); i++) {
+
+            clave = password.charAt(i);
+
+            String passValue = String.valueOf(clave);
+
+            if (passValue.matches("[A-Z]")) {
+
+                contLetraMay++;
+
+            } else if (passValue.matches("[a-z]")) {
+
+                contLetraMin++;
+
+            } else if (passValue.matches("[0-9]")) {
+
+                contNumero++;
+
+            }else if(contLetraMay>0 && contNumero>0&&contLetraMin>0){
+                return true;
+            }
+
+        }
 
 
-        return msj;
+        return false;
     }
+
+
 }

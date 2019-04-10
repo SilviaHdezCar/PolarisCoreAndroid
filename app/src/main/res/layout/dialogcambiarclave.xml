@@ -2,10 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:id="@+id/panel_cambiar_clave"
-    >
+    tools:context=".MainActivity">
 
     <TextView
         style="@style/letra_titulos"
@@ -17,7 +18,7 @@
 
     <TextView
         style="@style/letra_contenido"
-        android:layout_width="320dp"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
@@ -26,8 +27,8 @@
 
     <EditText
         android:id="@+id/dialog_clave_actual"
-        android:layout_width="320dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/size_width_editText"
+        android:layout_height="@dimen/size_height_editText"
         android:layout_marginTop="20dp"
         android:background="@drawable/redondo_gris"
         android:hint="@string/clave_actual"
@@ -35,16 +36,16 @@
 
     <EditText
         android:id="@+id/dialog_clave_nueva"
-        android:layout_width="320dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/size_width_editText"
+        android:layout_height="@dimen/size_height_editText"
         android:layout_marginTop="20dp"
         android:background="@drawable/redondo_gris"
         android:hint="@string/clave_nueva" />
 
     <EditText
         android:id="@+id/dialog_clave_confirmar"
-        android:layout_width="320dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/size_width_editText"
+        android:layout_height="@dimen/size_height_editText"
         android:layout_marginTop="20dp"
         android:background="@drawable/redondo_gris"
         android:hint="@string/clave_confirmar" />

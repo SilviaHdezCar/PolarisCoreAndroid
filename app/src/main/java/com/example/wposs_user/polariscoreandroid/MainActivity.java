@@ -1,16 +1,11 @@
 package com.example.wposs_user.polariscoreandroid;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AlertDialog;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -25,7 +20,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, CambiarClave.CambiarClaveListener {
+        implements NavigationView.OnNavigationItemSelectedListener, CambiarClaveDialogo.CambiarClaveListener {
     private AppBarLayout appBar;
     private TabLayout tabs;
     private ViewPager viewPager;
@@ -174,29 +169,31 @@ public class MainActivity extends AppCompatActivity
     private TextView claveConfirmarClave;
     private Button btn_cambiarClave;
 
-    public void actualizarClave(View view) {
-        claveActual = (TextView) findViewById(R.id.dialog_clave_actual);
-        clavenueva = (TextView) findViewById(R.id.dialog_clave_nueva);
-        claveConfirmarClave = (TextView) findViewById(R.id.dialog_clave_confirmar);
+    //dialog_clave_actual-->edit_username___dialog
 
-        btn_cambiarClave = (Button) findViewById(R.id.btn_cambiar_clave);
-        btn_cambiarClave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                abrirCambiarClave();
-            }
-        });
+    public void actualizarClave(View view) {
+        //claveActual = (TextView) findViewById(R.id.dialog_clave_actual);
+        //clavenueva = (TextView) findViewById(R.id.dialog_clave_nueva);
+        //claveConfirmarClave = (TextView) findViewById(R.id.dialog_clave_confirmar);
+
+        claveActual = (TextView) findViewById(R.id.actual);//textview_username voy a mostar los campos iongresados
+        clavenueva = (TextView) findViewById(R.id.nueva);
+        claveConfirmarClave = (TextView) findViewById(R.id.confirmar);
+
+        abrirCambiarClave();
     }
 
     private void abrirCambiarClave() {
-        CambiarClave cambiarClave = new CambiarClave();
-        cambiarClave.show(getSupportFragmentManager(), "Actualización de la clave.main");
+        CambiarClaveDialogo cambiarClaveDialogo = new CambiarClaveDialogo();
+        cambiarClaveDialogo.show(getSupportFragmentManager(), "Actualización de la clave.main");
     }
 
 
     @Override
     public void applyTexts(String clave_actual, String clave_nueva, String clave_confirmar) {
-
+        claveActual.setText(clave_actual);
+        clavenueva.setText(clave_nueva);
+        claveConfirmarClave.setText(clave_confirmar);
     }
 }
 

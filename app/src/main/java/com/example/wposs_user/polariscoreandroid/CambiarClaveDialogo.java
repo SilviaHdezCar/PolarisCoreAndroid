@@ -10,11 +10,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
-public class CambiarClave extends AppCompatDialogFragment {
+public class CambiarClaveDialogo extends AppCompatDialogFragment {
     private TextView claveActual;
     private TextView clavenueva;
     private TextView claveConfirmarClave;
     private CambiarClaveListener listener;
+
+
 
 
     @Override
@@ -22,27 +24,29 @@ public class CambiarClave extends AppCompatDialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view =inflater.inflate(R.layout.dialogcambiarclave, null);
+        claveActual = view.findViewById(R.id.dialog_clave_actual);
+        clavenueva = view.findViewById(R.id.dialog_clave_nueva);
+        claveConfirmarClave = view.findViewById(R.id.dialog_clave_confirmar);
 
         builder.setView(view)
-                .setTitle("Cambiar clave")
-                // Add action buttons
+
                 .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
                         String actual=claveActual.getText().toString();
                         String nueva=clavenueva.getText().toString();
-                        String confirmar=claveConfirmarClave.getText().toString();
-                        listener.applyTexts(actual, nueva, confirmar);
+                        String confirmacion=claveConfirmarClave.getText().toString();
+
+                        String msj=validarClave(actual, nueva,confirmacion);
+
                     }
                 })
                 .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-
+                            return;
                     }
                 });
-        claveActual = view.findViewById(R.id.dialog_clave_actual);
-        clavenueva = view.findViewById(R.id.dialog_clave_nueva);
-        claveConfirmarClave = view.findViewById(R.id.dialog_clave_confirmar);
+
 
         return builder.create();
     }
@@ -60,5 +64,13 @@ public class CambiarClave extends AppCompatDialogFragment {
 
     public interface CambiarClaveListener{
         void applyTexts(String clave_actual, String clave_nueva, String clave_confirmar );
+    }
+
+    public String validarClave(String clave_actual, String clave_nueva, String clave_confirmar ){
+        String msj="";
+
+
+
+        return msj;
     }
 }

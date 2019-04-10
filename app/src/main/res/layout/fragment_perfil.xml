@@ -172,10 +172,24 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/btn_cambiar_clave"
                 android:text="Actualizar clave"
-                android:layout_marginTop="15dp" />
+                android:layout_marginTop="15dp"
+                android:onClick="actualizarClave"/>
 
 
         </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/actual"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nueva"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/confirmar"/>
 
     </LinearLayout>
 

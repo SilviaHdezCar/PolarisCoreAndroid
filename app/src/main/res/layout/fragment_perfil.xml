@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="10dp">
 
 
         <TextView
@@ -48,6 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:id="@+id/perfil_nombre_usuario"
+                android:text="Silvia HC"
                 style="@style/letra_contenido"
                 />
         </LinearLayout>
@@ -71,6 +73,7 @@
                 android:layout_height="20dp"
                 android:id="@+id/perfil_usuario"
                 style="@style/letra_contenido"
+                android:text="shc01"
                 />
         </LinearLayout>
 
@@ -92,6 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:id="@+id/perfil_cargo"
+                android:text="Tecnica Campo"
                 style="@style/letra_contenido"
                 />
         </LinearLayout>
@@ -114,6 +118,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:id="@+id/perfil_telefono"
+
+
                 style="@style/letra_contenido"
                 />
         </LinearLayout>

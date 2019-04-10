@@ -32,6 +32,7 @@ public class InicialFragment extends Fragment {
         appBar=(AppBarLayout)container.findViewById(R.id.appbar);
         tabs=new TabLayout(getActivity());
         tabs.setTabTextColors(Color.parseColor("#FFFFFF"), Color.parseColor("#FFFFFF"));
+        tabs.setBackgroundColor(Color.parseColor("#45A5F3"));
         appBar.addView(tabs);
 
 

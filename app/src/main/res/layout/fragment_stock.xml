@@ -5,12 +5,8 @@
     android:layout_height="match_parent"
     tools:context=".ImportFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager_stock"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="STOCK"
-        android:textSize="30sp"
-        android:textStyle="bold" />
-
+        android:layout_height="match_parent" />
 </FrameLayout>

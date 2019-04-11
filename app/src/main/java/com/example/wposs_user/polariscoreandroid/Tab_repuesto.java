@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 /**
  */
-public class Tab_rep extends Fragment {
+public class Tab_repuesto extends Fragment {
     //
 
 

@@ -25,7 +25,7 @@ public class StockFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_stock, container, false);
+        View v = inflater.inflate(R.layout.fragment_stock, container, false);
         // Inflate the layout for this fragment
         View contenedor = (View) container.getParent();
         appBar = (AppBarLayout) container.findViewById(R.id.appbar);
@@ -34,12 +34,14 @@ public class StockFragment extends Fragment {
         tabs.setBackgroundColor(Color.parseColor("#45A5F3"));
         appBar.addView(tabs);
 
-        viewPager = (ViewPager) view.findViewById(R.id.pager_stock);//*******buscar pager
+        viewPager = (ViewPager) v.findViewById(R.id.pager_stock);//*******buscar pager
         StockFragment.ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(getFragmentManager());
         viewPager.setAdapter(pagerAdapter);
         tabs.setupWithViewPager(viewPager);
 
-        return view;
+
+
+              return v;
 
 
     }
@@ -67,9 +69,11 @@ public class StockFragment extends Fragment {
 
             switch (i){
                 case 0:
-                    return new tab_ter();
+                    Tab_terminal tb = new Tab_terminal();
+                    return  tb;
                 case 1:
-                    return  new Tab_rep();
+                    Tab_repuesto tr= new Tab_repuesto();
+                    return  tr;
             }
 
             return null;

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Activity_login"
-    android:paddingHorizontal="10dp"
+    android:padding="15dp"
     android:background="@color/gris_fondo">
 
     <RelativeLayout
@@ -19,9 +19,7 @@
             android:layout_marginTop="100dp"
             android:text="@string/iniciar"
             android:textSize="30dp"
-            android:textStyle="bold"
             android:layout_centerHorizontal="true"
-            android:layout_marginRight="10dp"
             android:textColor="@color/negro"
 
             />
@@ -59,13 +57,14 @@
         android:id="@+id/txtPass"
         android:layout_width="300dp"
         android:layout_height="40dp"
-        android:layout_marginLeft="10dp"
         android:background="@drawable/redondo_fondo_blanco"
         android:layout_marginTop="320dp"
         android:layout_centerHorizontal="true"
         android:hint="@string/clave"
         android:inputType="textPassword"
-        android:textSize="14dp"/>
+        android:textSize="14dp"
+
+        />
 
 
         <Button
@@ -107,7 +106,7 @@
 
         <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="300dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="-280dp"
         android:layout_centerHorizontal="true"
@@ -117,23 +116,21 @@
 
         <ImageView
         android:id="@+id/imageView33"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="300dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="285dp"
         android:layout_marginTop="259dp"
-        android:layout_marginRight="10dp"
-        app:srcCompat="@drawable/user"
+         app:srcCompat="@drawable/user"
 
 
         />
 
         <ImageView
             android:id="@+id/imageView34"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="300dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="285dp"
             android:layout_marginTop="329dp"
-            android:layout_marginRight="10dp"
             app:srcCompat="@drawable/candado"
 
             />

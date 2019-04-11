@@ -168,12 +168,14 @@
             </LinearLayout>
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/btn_cambiar_clave"
                 android:text="Actualizar clave"
                 android:layout_marginTop="15dp"
-                android:onClick="actualizarClave"/>
+                android:onClick="actualizarClave"
+                android:background="@drawable/redondo_azul"
+                style="@style/letra_botones"/>
 
 
         </LinearLayout>

@@ -32,7 +32,8 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/redondo_gris"
         android:hint="@string/clave_actual"
-        android:inputType="textVisiblePassword"/>
+        android:inputType="textVisiblePassword"
+        android:digits="0123456789abcdfghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZñÑ"/>
 
     <EditText
         android:id="@+id/dialog_clave_nueva"
@@ -40,7 +41,9 @@
         android:layout_height="@dimen/size_height_editText"
         android:layout_marginTop="20dp"
         android:background="@drawable/redondo_gris"
-        android:hint="@string/clave_nueva" />
+        android:hint="@string/clave_nueva"
+        android:inputType="textPassword"
+        android:digits="0123456789abcdfghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZñÑ"/>
 
     <EditText
         android:id="@+id/dialog_clave_confirmar"
@@ -48,7 +51,9 @@
         android:layout_height="@dimen/size_height_editText"
         android:layout_marginTop="20dp"
         android:background="@drawable/redondo_gris"
-        android:hint="@string/clave_confirmar" />
+        android:hint="@string/clave_confirmar"
+        android:inputType="textPassword"
+        android:digits="0123456789abcdfghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZñÑ"/>
 
 
 </LinearLayout>

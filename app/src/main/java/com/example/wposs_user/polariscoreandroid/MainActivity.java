@@ -1,11 +1,15 @@
 package com.example.wposs_user.polariscoreandroid;
 
+import android.annotation.SuppressLint;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -19,13 +23,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, CambiarClaveDialogo.CambiarClaveListener {
+import java.util.Vector;
 
+public class MainActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
     private AppBarLayout appBar;
     private TabLayout tabs;
     private ViewPager viewPager;
-    Tab_terminal tab;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setTitle(null);
         setSupportActionBar(toolbar);
+        agregarTeminalesVector();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -47,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.contenedor_main, new InicialFragment()).commit();
+
     }
 
     @Override
@@ -71,14 +77,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent i;
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.contenedor_main, new InicialFragment()).commit();
+
         switch (item.getItemId()) {
 
 
             case R.id.btn_home:
-                i = new Intent(this, MainActivity.class);
-                startActivity(i);
-                finish();
+                fragmentManager.beginTransaction().replace(R.id.contenedor_main, new InicialFragment()).commit();
                 return true;
 
             case R.id.btn_aumentar:
@@ -108,16 +112,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // AL SELECCIONAR ALGUUNA OPCION DEL MENU
         FragmentManager fragmentManager = getSupportFragmentManager();
         int id = item.getItemId();
+
         if (id == R.id.nav_perfil) {
             fragmentManager.beginTransaction().replace(R.id.contenedor_main, new PerfilFragment()).commit();
             // cargarDatosPerfil();
         } else if (id == R.id.nav_stock) {
             fragmentManager.beginTransaction().replace(R.id.contenedor_main, new StockFragment()).commit();
         } else if (id == R.id.nav_consultar_terminales_reparadas) {
-            fragmentManager.beginTransaction().replace(R.id.contenedor_main, new ConsultaTerminalesReparadasFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.contenedor_main, new ConsultaTerminalesReparadasFragm()).commit();
+
         } else if (id == R.id.nav_productividad) {
             fragmentManager.beginTransaction().replace(R.id.contenedor_main, new ProductividadFragment()).commit();
-            ;
+
         } else if (id == R.id.nav_cerrar_sesion) {
             Intent i = new Intent(this, Activity_login.class);
             startActivity(i);
@@ -165,36 +171,81 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
     //METODO QUE MUESTRA EL PANEL PARA ACTUALIZAR LA CLAVE
-    private TextView claveActual;
-    private TextView clavenueva;
-    private TextView claveConfirmarClave;
-    private Button btn_cambiarClave;
-
-    //dialog_clave_actual-->edit_username___dialog
-
     public void actualizarClave(View view) {
-        //claveActual = (TextView) findViewById(R.id.dialog_clave_actual);
-        //clavenueva = (TextView) findViewById(R.id.dialog_clave_nueva);
-        //claveConfirmarClave = (TextView) findViewById(R.id.dialog_clave_confirmar);
-
-        claveActual = (TextView) findViewById(R.id.actual);//textview_username voy a mostar los campos iongresados
-        clavenueva = (TextView) findViewById(R.id.nueva);
-        claveConfirmarClave = (TextView) findViewById(R.id.confirmar);
-
-        abrirCambiarClave();
-    }
-
-    private void abrirCambiarClave() {
         CambiarClaveDialogo cambiarClaveDialogo = new CambiarClaveDialogo();
         cambiarClaveDialogo.show(getSupportFragmentManager(), "Actualización de la clave.main");
     }
 
 
-    @Override
-    public void applyTexts(String clave_actual, String clave_nueva, String clave_confirmar) {
-        claveActual.setText(clave_actual);
-        clavenueva.setText(clave_nueva);
-        claveConfirmarClave.setText(clave_confirmar);
+
+    //********************************************CONSULTAR TERMINALES*********************************************************************************************
+    private RecyclerView recyclerView;
+    private RecyclerView.LayoutManager layoutManager;
+    private Vector<Terminal> terminales;
+
+    private void agregarTeminalesVector(){
+        this.terminales = new Vector<>();
+        Terminal t1= new Terminal("12AAE4D", "Gertec", "Newpos9220", "WIFI", "nuevo", null);
+        Terminal t2= new Terminal("GTDAE4D", "Gertec", "Newpos6210", "LAN", "Diagnostico", null);
+        Terminal t3= new Terminal("ASFAFAD", "Gertec", "Newpos7210", "DIAL", "Reparación", null);
+        terminales.add(t1);
+        terminales.add(t2);
+        terminales.add(t3);
+    }
+
+    //ESTE METODO LISTA LAS TERMINALES QUE TIENEN DIAGNOSTICO
+    private Button btn_diagnostico;
+    private Button btn_reparadas;
+
+    public void verTerminalesDiasnostico(View view) {
+        btn_diagnostico = (Button) findViewById(R.id.btn_terminales_diagnostico);
+        btn_reparadas = (Button) findViewById(R.id.btn_terminales_reparadas);
+
+        btn_diagnostico.setBackgroundColor(0x802196F5);
+
+        btn_reparadas.setBackgroundColor(0x8045A5F3);
+
+
+         Vector<Terminal> terminales_diagnostico = new Vector<>();
+        for(Terminal ter:this.terminales){
+            if (ter.getEstado().equalsIgnoreCase("Diagnostico")){
+                terminales_diagnostico.add(ter);
+            }
+
+        }
+
+
+
+        recyclerView=(RecyclerView)findViewById(R.id.recycler_view_consultaTerminales);
+        recyclerView.setAdapter(new AdapterTerminal(this, terminales_diagnostico));//le pasa los datos-> lista de usuarios
+
+        layoutManager = new LinearLayoutManager(this);// en forma de lista
+        recyclerView.setLayoutManager(layoutManager);
+
+
+    }
+
+    //ESTE METODO LISTA LAS TERMINALES REPARADAS
+    public void verTerminalesReparadas(View view) {
+        btn_diagnostico = (Button) findViewById(R.id.btn_terminales_diagnostico);
+        btn_reparadas = (Button) findViewById(R.id.btn_terminales_reparadas);
+
+        btn_reparadas.setBackgroundColor(0x802196F5);
+        btn_diagnostico.setBackgroundColor(0x8045A5F3);
+
+        Vector<Terminal> terminales_rep = new Vector<>();
+        for(Terminal ter:this.terminales){
+            if (ter.getEstado().equalsIgnoreCase("Reparación")){
+                terminales_rep.add(ter);
+            }
+
+        }
+
+        recyclerView=(RecyclerView)findViewById(R.id.recycler_view_consultaTerminales);
+        recyclerView.setAdapter(new AdapterTerminal(this, terminales_rep));//le pasa los datos-> lista de usuarios
+
+        layoutManager = new LinearLayoutManager(this);// en forma de lista
+        recyclerView.setLayoutManager(layoutManager);;
     }
 }
 

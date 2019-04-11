@@ -9,19 +9,22 @@ import android.support.v7.app.AppCompatDialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CambiarClaveDialogo extends AppCompatDialogFragment {
     private TextView claveActual;
     private TextView clavenueva;
     private TextView claveConfirmarClave;
-    private CambiarClaveListener listener;
+
 
 
 
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view =inflater.inflate(R.layout.dialogcambiarclave, null);
         claveActual = view.findViewById(R.id.dialog_clave_actual);
@@ -37,7 +40,14 @@ public class CambiarClaveDialogo extends AppCompatDialogFragment {
                         String nueva=clavenueva.getText().toString();
                         String confirmacion=claveConfirmarClave.getText().toString();
 
-                        String msj=validarClave(actual, nueva,confirmacion);
+                        final String msj=validarClave(actual, nueva,confirmacion);
+                        Toast.makeText(getContext(), msj, Toast.LENGTH_LONG).show();
+
+                        if(!msj.equalsIgnoreCase("Actualización exitosa")){
+
+                        }else{
+                            Toast.makeText(getContext(), msj, Toast.LENGTH_LONG).show();
+                        }
 
                     }
                 })
@@ -46,49 +56,15 @@ public class CambiarClaveDialogo extends AppCompatDialogFragment {
                             return;
                     }
                 });
-
-
         return builder.create();
     }
 
 
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-
-        try {
-            listener=(CambiarClaveListener) context;
-        } catch (ClassCastException e) {
-            throw  new ClassCastException(context.toString()+"Deber implementar CambiarClaveListener");
-        }
-    }
-
-    public interface CambiarClaveListener{
-        void applyTexts(String clave_actual, String clave_nueva, String clave_confirmar );
-    }
-
-    /*
-    *
-    * public String cambiarClave(String actual, String nueva, String confirmacion){
-        //validar que no hayan cuadros vacio
-        //validar que la clave sea mayor a 8caracteres
-        //validar que la actual sea igual a la ingesada
-        //que no ingrese simbolos--> se angrega android:digits.....
-        //validar que la nueva y confirmacion sean iguales
-        //revision de MayMimNum
-        //clave nueva!= a la actual
-
-        //colocar en el TextView:-->para que solo ingrese num y letras
-        //<EditText android:inputType="text"
-        //android:digits="0123456789abcdfghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZñÑ" />
-
-
-    }
 
 
 
-    */
+
 
     //este metodo hace las validaciones escritas en el cuaderno
     private String validarClave(String actual, String nueva, String confirmacion) {

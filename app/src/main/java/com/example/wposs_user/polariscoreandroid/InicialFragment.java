@@ -25,63 +25,8 @@ public class InicialFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        View view =inflater.inflate(R.layout.fragment_inicial, container, false);
         // Inflate the layout for this fragment
-        View contenedor=(View)container.getParent();
-        appBar=(AppBarLayout)container.findViewById(R.id.appbar);
-        tabs=new TabLayout(getActivity());
-        tabs.setTabTextColors(Color.parseColor("#FFFFFF"), Color.parseColor("#FFFFFF"));
-        tabs.setBackgroundColor(Color.parseColor("#45A5F3"));
-        appBar.addView(tabs);
+        return inflater.inflate(R.layout.fragment_inicial, container, false);
 
-
-        viewPager=(ViewPager)view.findViewById(R.id.pager);//*******buscar pager
-        ViewPagerAdapter pagerAdapter=new ViewPagerAdapter(getFragmentManager());
-        viewPager.setAdapter(pagerAdapter);
-        tabs.setupWithViewPager(viewPager);
-
-        return view;
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        appBar.removeView(tabs);
-    }
-
-    public class ViewPagerAdapter extends FragmentStatePagerAdapter{
-
-        public ViewPagerAdapter(FragmentManager fragmentManager){
-            super(fragmentManager);
-        }
-
-        String[]tituloTabs={"Terminales Asociadas", "Terminales autorizadas"};
-
-
-
-        @Override
-        public Fragment getItem(int i) {
-
-            switch (i){
-                case 0:
-                    return new Tab_ConsultaTerminalesAsociadas();
-                case 1:
-                    return  new Tab_ConsultaTerminalesAutorizadas();
-            }
-
-            return null;
-        }
-
-        @Override
-        public int getCount() {
-            return 2;
-        }
-
-        @Nullable
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return tituloTabs[position];
-        }
     }
 }

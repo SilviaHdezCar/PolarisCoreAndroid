@@ -21,6 +21,12 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="letra_tabs">
+        <item name="android:textColor">@color/blanco</item>
+        <item name="android:textSize">13dp</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
     <style name="letra_negrita">
         <item name="android:textColor">@color/negro</item>
         <item name="android:textSize">14dp</item>

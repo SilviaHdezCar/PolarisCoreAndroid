@@ -1,12 +1,19 @@
 package com.example.wposs_user.polariscoreandroid;
 
+import java.util.Date;
+
 public class Terminal {
 
 
-String serial,marca,modelo, tecnologia,estado,fechaLimite;
+    private String serial;
+    private String marca;
+    private String modelo;
+    private String tecnologia;
+    private String estado;
+    private Date fechaLimite;
 
 
-    public Terminal(String serial, String marca, String modelo, String tecnologia, String estado, String fechaLimite) {
+    public Terminal(String serial, String marca, String modelo, String tecnologia, String estado, Date fechaLimite) {
         this.serial = serial;
         this.marca = marca;
         this.modelo = modelo;
@@ -15,9 +22,6 @@ String serial,marca,modelo, tecnologia,estado,fechaLimite;
         this.fechaLimite = fechaLimite;
     }
 
-
-    public Terminal() {
-    }
 
 
     public String getSerial() {
@@ -60,11 +64,11 @@ String serial,marca,modelo, tecnologia,estado,fechaLimite;
         this.estado = estado;
     }
 
-    public String getFechaLimite() {
+    public Date getFechaLimite() {
         return fechaLimite;
     }
 
-    public void setFechaLimite(String fechaLimite) {
+    public void setFechaLimite(Date fechaLimite) {
         this.fechaLimite = fechaLimite;
     }
 }

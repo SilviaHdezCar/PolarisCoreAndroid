@@ -1,5 +1,6 @@
 package com.example.wposs_user.polariscoreandroid;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,34 +9,41 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Vector;
 
 public class AdapterTerminal extends RecyclerView.Adapter<AdapterTerminal.ViewHolderTerminal> {
 
-    ArrayList<Terminal> ter ;
+    private Vector<Terminal> listTerminal;
+    private LayoutInflater inflador;
 
-
-    public AdapterTerminal(ArrayList<Terminal> ter)
-    {
-        this.ter = ter;
+    public AdapterTerminal(Context c, Vector<Terminal> list) {
+        this.listTerminal = list;
+        this.inflador = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
 
     @Override
     public ViewHolderTerminal onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.panel_terminal,null,false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.panel_terminal, null);
 
         return new ViewHolderTerminal(v);
     }
 
     @Override
-    public void onBindViewHolder(ViewHolderTerminal holderDatos, int i) {
-        holderDatos.asignarTerminal(ter.get(i));
+    public void onBindViewHolder(ViewHolderTerminal holder, int i) {
+        Terminal ter = this.listTerminal.elementAt(i);
+        holder.serial.setText( ter.getSerial());
+        holder.marca.setText( ter.getMarca());
+        holder.modelo.setText( ter.getModelo());
+        holder.tecnologia.setText( ter.getTecnologia());
+        holder.estado.setText(ter.getEstado());
+        holder.fechaANS.setText(ter.getFechaLimite()+"");
 
     }
 
     @Override
     public int getItemCount() {
-        return ter.size();
+        return listTerminal.size();
     }
 
     public class ViewHolderTerminal extends RecyclerView.ViewHolder {
@@ -45,46 +53,21 @@ public class AdapterTerminal extends RecyclerView.Adapter<AdapterTerminal.ViewHo
         TextView modelo;
         TextView tecnologia;
         TextView estado;
-        TextView fechaLim;
-        TextView tit;
+        TextView fechaANS;
 
 
         public ViewHolderTerminal(View v) {
             super(v);
-            tit = (TextView)v.findViewById(R.id.titulo_terr);
             serial = (TextView) v.findViewById(R.id.serial_ter);
-           marca = (TextView) v.findViewById(R.id.marca_ter);
-           modelo = (TextView) v.findViewById(R.id.modelo_ter);
-           tecnologia = (TextView) v.findViewById(R.id.tecno_ter);
-           estado = (TextView) v.findViewById(R.id.estado_ter);
-           fechaLim=(TextView) v.findViewById(R.id.fechal_ter);
+            marca = (TextView) v.findViewById(R.id.marca_ter);
+            modelo = (TextView) v.findViewById(R.id.modelo_ter);
+            tecnologia = (TextView) v.findViewById(R.id.tecno_ter);
+            estado = (TextView) v.findViewById(R.id.estado_ter);
+            fechaANS = (TextView) v.findViewById(R.id.fechal_ter);
 
 
         }
 
-        public void asignarTerminal(Terminal term) {
-
-            int i = 0;
-
-
-            for (Terminal t : ter) {
-
-
-               serial.setText(t.getSerial());
-                marca.setText(t.getEstado());
-                modelo.setText(t.getModelo());
-                tecnologia.setText(t.getTecnologia());
-                estado.setText(t.getEstado());
-                fechaLim.setText(t.getFechaLimite());
-
-
-                if(t.getSerial().equals(serial.getText().toString())) {
-                    int x = ter.indexOf(t)+1;
-                    tit.setText("-----------------------------------TERMINAL " + x+"-----------------------------------");
-                }
-
-            }
-        }
     }
 
 
